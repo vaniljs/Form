@@ -16,6 +16,14 @@ gulp.task('clean', async function (done) {
     done()
 });
 
+
+gulp.task('php', function (done) {
+    return gulp.src('src/*.php')
+        .pipe(gulp.dest('dist'))
+        .pipe(browserSync.reload({stream: true}));
+    done()
+});
+
 gulp.task('pug', function (done) {
     return gulp.src('src/*.pug')
         .pipe(pugCompile())
@@ -59,10 +67,11 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('watch', function () {
+    gulp.watch('src/*.php', gulp.parallel('php'));
     gulp.watch('src/*.pug', gulp.parallel('pug'));
     gulp.watch('src/scss/*.sass', gulp.parallel('sass'));
     gulp.watch('src/js/*.js', gulp.parallel('javascript'))
 });
 
-gulp.task('build', gulp.series('clean', 'pug', 'sass', 'javascript'));
-gulp.task('default', gulp.parallel('pug', 'sass', 'javascript', 'browser-sync', 'watch'));
+gulp.task('build', gulp.series('clean', 'php', 'pug', 'sass', 'javascript'));
+gulp.task('default', gulp.parallel('php', 'pug', 'sass', 'javascript', 'browser-sync', 'watch'));

@@ -4,6 +4,8 @@ html(lang="ru")
         title Document
         link(rel="stylesheet" href="css/style.min.css")
     body
-        h1 Head
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam, animi commodi delectus dolorum facilis iste laboriosam magni maxime, officia perspiciatis placeat quae quas quibusdam repellat sit suscipit unde veniam?
+        form(method="POST" id="sendform" enctype="multipart/form-data")
+            input(type="text" name="info")
+            input(name="file[]" value="1" size="40" type="file" multiple)
+            input(class="button" value="ОТПРАВИТЬ" name="sendMail" type="submit")
         script(src="js/main.min.js")
