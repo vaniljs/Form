@@ -1,13 +1,21 @@
 {
-  "name": "gulp-start",
+  "name": "form",
   "version": "1.0.0",
-  "description": "start gulp",
-  "main": "index.js",
+  "description": "Универсальные формы",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaniljs/Form.git"
+  },
   "author": "",
-  "license": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaniljs/Form/issues"
+  },
+  "homepage": "https://github.com/vaniljs/Form#readme",
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
@@ -21,7 +29,6 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.13.0",
-  },
-  "dependencies": {}
+    "node-sass": "^4.13.0"
+  }
 }
